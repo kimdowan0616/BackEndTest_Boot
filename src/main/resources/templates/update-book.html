@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<body>                                              <!-- 입력 객체의 클래스. 맨 앞이 소문자-->
+<form action="#" th:action="@{/bookspage/update/{id}(id=${book.id})}" th:object="${book}" method="post">
+    <label for="title">Title</label>
+    <input type="text" th:field="*{title}" id="title">
+    <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span> <br />
+
+    <input type="submit" value="Update Book Title">
+</form>
+</body>
+</html>
